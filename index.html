@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="studentView">
+            <h1>Student View</h1>
+            <input type="number" id="studentCode" placeholder="Enter Student Code (Numbers Only)" required>
+            <button onclick="viewGrade()" aria-label="View Grade">View Grade</button>
+
+            <table id="gradesTable" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Homework</th>
+                        <th>Classwork</th>
+                        <th>Exam</th>
+                        <th>Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student grades will be inserted here -->
+                </tbody>
+            </table>
+            <div id="errorMessage" class="error-message" aria-live="assertive"></div>
+            <button onclick="showLogin()">Access Dashboard</button>
+        </div>
+
+        <div id="loginForm" style="display:none;">
+            <h1>Login to Dashboard</h1>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <div id="loginErrorMessage" class="error-message" aria-live="assertive"></div>
+        </div>
+
+        <div id="dashboard" style="display:none;">
+            <h1>Student Grades Dashboard</h1>
+
+            <!-- Section for Admin to Add/Edit Grades -->
+            <div class="form-container">
+                <h2>Add/Edit Student Grade</h2>
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <input type="number" id="studentCodeInput" placeholder="Student Code (Numbers Only)" required pattern="\d+">
+                <input type="number" id="homeworkScore" placeholder="Homework Score">
+                <input type="number" id="totalHomeworkScore" placeholder="Total Homework Score">
+                <input type="number" id="classworkScore" placeholder="Classwork Score">
+                <input type="number" id="totalClassworkScore" placeholder="Total Classwork Score">
+                <input type="number" id="examScore" placeholder="Exam Score">
+                <input type="number" id="totalExamScore" placeholder="Total Exam Score">
+                <label>
+                    Absent:
+                    <input type="checkbox" id="absentCheckbox">
+                </label>
+                <button id="addButton" onclick="addGrade()" aria-label="Add Grade">Add Grade</button>
+                <button id="updateButton" onclick="updateGrade()" style="display:none;" aria-label="Update Grade">Update Grade</button>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <h2>Grades Table</h2>
+            <table id="gradesTableDashboard">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Homework</th>
+                        <th>Total Homework</th>
+                        <th>Classwork</th>
+                        <th>Total Classwork</th>
+                        <th>Exam</th>
+                        <th>Total Exam</th>
+                        <th>Absent</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Grades will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

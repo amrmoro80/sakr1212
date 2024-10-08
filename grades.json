@@ -1,0 +1,24 @@
+[
+  {
+    "name": "youssef",
+    "code": "1",
+    "homework": "Not Done",
+    "totalHomework": "Not Done",
+    "classwork": "Not Done",
+    "totalClasswork": "Not Done",
+    "exam": "Not Done",
+    "totalExam": "Not Done",
+    "absent": false
+  },
+  {
+    "name": "moko",
+    "code": "2",
+    "homework": "100",
+    "totalHomework": "100",
+    "classwork": "100",
+    "totalClasswork": "100",
+    "exam": "100",
+    "totalExam": "100",
+    "absent": false
+  }
+]
